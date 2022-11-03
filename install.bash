@@ -49,7 +49,7 @@ if [ ! -f $SCRIPT_DIR/$TARGET_ZIP ]; then
     echo "============================================"
     echo "download: $TARGET_ZIP ..."
 
-    URL="https://github.com/Ar-Ray-code/rpi-bullseye-ros2/releases/download/ros2-$VERSION/$TARGET_ZIP"
+    URL="https://github.com/RomainMaure/rpi-bullseye-ros2/releases/download/v1.0.0/$TARGET_ZIP"
     wget $URL || { echo "Check the github release and see if the file is there." && unset TARGET_ZIP ROS_INSTALL_DIR VERSION TARGET_DISTRO SCRIPT_DIR && exit 1; }
 
     # extract from zip and copy to $ROS_INSTALL_DIR
@@ -59,7 +59,7 @@ fi
 
 # Install dependencies ===================================================================
 cd $SCRIPT_DIR
-git clone https://github.com/Ar-Ray-code/rpi-bullseye-ros2.git
+git clone https://github.com/RomainMaure/rpi-bullseye-ros2.git
 
 # DL_ONLY selected -> exit
 if [ ! -z "$DL_ONLY" ]; then
